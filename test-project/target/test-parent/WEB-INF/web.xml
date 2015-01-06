@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <display-name>pollen8-api</display-name>
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    <session-config>
+        <session-timeout>1</session-timeout>
+    </session-config>
+    <!-- ============================listener============================ -->
+    <listener><listener-class>org.springframework.web.context.ContextLoaderListener</listener-class></listener>
+    <!-- ============================Context============================ -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:/config/application-config.xml</param-value>
+    </context-param>
+    <!-- ============================servlet============================ -->
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value> classpath*:/config/dispatcher-servlet.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+    <!--
+        <servlet>
+            <servlet-name>requestHandlerServlet</servlet-name>
+            <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>requestHandlerServlet</servlet-name>
+            <url-pattern>/*</url-pattern>
+        </servlet-mapping>
+     -->
+    <!-- ============================Exception============================ -->
+    <!--
+        <error-page>
+            <exception-type>java.lang.Throwable</exception-type>
+            <location>/error.jsp</location>
+        </error-page>
+     -->
+
+</web-app>

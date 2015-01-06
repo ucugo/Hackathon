@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd">
+<Configure class="org.mortbay.jetty.webapp.WebAppContext">
+    <New class="org.mortbay.jetty.plus.naming.Resource">
+        <Arg>java:comp/env/jdbc/notification</Arg>
+        <Arg>
+            <New class="org.apache.commons.dbcp.BasicDataSource">
+                <Set name="defaultAutoCommit">true</Set>
+                <Set name="username">root</Set>
+                <Set name="password">147troublE</Set>
+                <Set name="url">jdbc:mysql://localhost/notification_db?profileSQL=false</Set>
+                <Set name="validationQuery">SELECT 1</Set>
+                <Set name="testOnBorrow">true</Set>
+                <Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+            </New>
+        </Arg>
+    </New>
+
+    <!--
+        <New class="org.mortbay.jetty.plus.naming.Resource">
+            <Arg>java:comp/env/jdbc/pollen8</Arg>
+            <Arg>
+                <New class="org.apache.commons.dbcp.BasicDataSource">
+                    <Set name="defaultAutoCommit">true</Set>
+                    <Set name="username">root</Set>
+                    <Set name="password">WirelessMagic</Set>
+                    <Set name="url">jdbc:mysql://mypollen8-test.cnbliedtnqrb.us-east-1.rds.amazonaws.com/pollen8_vaadin?profileSQL=false</Set>
+                    <Set name="validationQuery">SELECT 1</Set>
+                    <Set name="testOnBorrow">true</Set>
+                    <Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+                </New>
+            </Arg>
+        </New>
+    -->
+</Configure>
