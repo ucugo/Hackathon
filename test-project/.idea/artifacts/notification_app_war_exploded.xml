@@ -49,7 +49,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="D:\workspace\test-project\target/MANIFEST.MF" />
+        <element id="file-copy" path="C:\Users\uchegc01\GitHub\Hackathon\test-project\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="notification-app/web/Web" />
     </root>

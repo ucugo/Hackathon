@@ -1,9 +1,7 @@
 package notification.controller;
 
-import javapns.Push;
-import javapns.communication.exceptions.KeystoreException;
-import javapns.notification.AppleNotificationServer;
-import javapns.notification.AppleNotificationServerBasicImpl;
+import hackaton.communication.exceptions.KeystoreException;
+import hackaton.notification.AppleNotificationServerBasicImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
